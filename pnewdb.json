@@ -1,0 +1,27 @@
+{
+  "data": {
+    "cars": {
+      "chevelle": [
+        {"year": 1972, "engine": "454", "color": "red"},
+        {"year": 1971, "engine": "396", "color": "green"},
+        {"year": 1969, "engine": "350", "color": "maroon"}
+      ],
+      "el comino": [
+        {"year": 1970, "engine": "454", "color": "yello"},
+        {"year": 1969, "engine": "396", "color": "tan"},
+        {"year": 1970, "engine": "350", "color": "blue"}
+      ]
+    },
+    "parts": {
+      "engines": [
+        {"engine": "350", "hp": "300 HP @5100 RPM", "torque": "335 LB-FT"},
+        {"engine": "HT383", "hp": "323 HP @4200 RPM", "torque": "444 LB-FT"},
+        {"engine": "HT502", "hp": "406 HP @4200 RPM", "torque": "541 LB-FT"}
+      ],
+      "transmissions": [
+        {"transmission": "TH350", "modded": true, "hpRating": "350"},
+        {"transmission": "Th400", "modded": false, "hpRating": "500"}
+      ]
+    }
+  }
+}
