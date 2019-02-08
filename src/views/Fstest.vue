@@ -1,10 +1,10 @@
 <template>
   <v-container grid-list-md>
-    <v-layout v-bind="binding">
+    <v-layout row>
       <v-flex grow>
         <v-textarea solo auto-grow name="loadFileInput" label="Load a JSON file to edit it." v-model="fileContents"></v-textarea>
       </v-flex>
-      <v-flex shrink grid-list-md>
+      <v-flex shrink>
         <v-flex>
           <v-btn color="info" @click="readFile">Open File</v-btn>
         </v-flex>
@@ -68,14 +68,7 @@ export default {
         })
       })
     }
-  },
-  computed: {
-      binding () {
-        const binding = {}
-        if (this.$vuetify.breakpoint.mdAndUp) binding.column = true
-        return binding
-      }
-    }
+  }
 }
 </script>
 

@@ -34,7 +34,7 @@ export default {
       items: [
         { title: 'Home', routeName: 'home'},
         { title: 'Basic I/O', routeName: 'fstest'},
-        { title: 'JSON Editor', routeName: 'editor'}
+        // { title: 'JSON Editor', routeName: 'editor'}
       ]
     }
   },
