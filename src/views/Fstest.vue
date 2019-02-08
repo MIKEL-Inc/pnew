@@ -15,7 +15,6 @@
     </v-layout>
     <v-alert :value="confirmSave" type="success" transition="scale-transition">This is a success confirmSave.</v-alert>
     <v-alert dismissible :value="failedSave" type="error" transition="scale-transition" @click="errMsg = null">There was an error saving the file. <br>{{ errMsg }}</v-alert>
-    <p>{{ fileContents }}</p>
   </v-container>
 </template>
 
