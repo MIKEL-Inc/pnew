@@ -1,25 +1,47 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/fstest">Read/Write Test</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <v-app id="app">
+    <v-toolbar app color="blue-grey" lights-out dark>
+      <v-toolbar-title class="headline text-uppercase">
+        <span>Pnew</span>
+        <span class="font-weight-light"> Test Platform</span>
+      </v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-menu bottom left>
+        <v-btn slot="activator" icon>
+          <v-icon>more_vert</v-icon>
+        </v-btn>
+
+        <v-list>
+          <v-list-tile v-for="(item, i) in items" :key="i" @click="goToView(item.routeName)">
+            <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+          </v-list-tile>
+        </v-list>
+      </v-menu>
+    </v-toolbar>
+
+    <v-content>
+      <router-view />
+    </v-content>
+  </v-app>
 </template>
 
-<style lang="sass">
-#app
-  font-family: 'Avenir', Helvetica, Arial, sans-serif
-  -webkit-font-smoothing: antialiased
-  -moz-osx-font-smoothing: grayscale
-  text-align: center
-  color: #2c3e50
-#nav
-  padding: 30px
-  a
-    font-weight: bold
-    color: #2c3e50
-    &.router-link-exact-active
-      color: #42b983
-</style>
+<script>
+export default {
+  name: 'App',
+  components: { },
+  data () {
+    return {
+      items: [
+        { title: 'Home', routeName: 'home'},
+        { title: 'Basic I/O', routeName: 'fstest'},
+        { title: 'JSON Editor', routeName: 'editor'}
+      ]
+    }
+  },
+  methods: {
+    goToView(path) {
+      this.$router.push({ name: path, params:{ name: path } })
+    }
+  }
+}
+</script>
