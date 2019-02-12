@@ -1,6 +1,6 @@
 <template>
   <v-container grid-list-md>
-    <v-layout v-bind="binding">
+    <v-layout>
       <v-flex grow>
         <v-textarea solo auto-grow name="loadFileInput" label="Load a JSON file to edit it." v-model="fileContents"></v-textarea>
       </v-flex>
@@ -68,14 +68,7 @@ export default {
         })
       })
     }
-  },
-  computed: {
-      binding () {
-        const binding = {}
-        if (this.$vuetify.breakpoint.mdAndUp) binding.column = true
-        return binding
-      }
-    }
+  }
 }
 </script>
 

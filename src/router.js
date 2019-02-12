@@ -20,14 +20,6 @@ export default new Router({
       // this generates a separate chunk (fstest.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "fstest" */ './views/Fstest.vue')
-    },
-    {
-      path: '/editor',
-      name: 'editor',
-      // route level code-splitting
-      // this generates a separate chunk (editor.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "editor" */ './views/Editor.vue')
     }
   ]
 })
