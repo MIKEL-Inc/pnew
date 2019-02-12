@@ -33,8 +33,7 @@ export default {
     return {
       items: [
         { title: 'Home', routeName: 'home'},
-        { title: 'Basic I/O', routeName: 'fstest'},
-        { title: 'JSON Editor', routeName: 'editor'}
+        { title: 'Basic I/O', routeName: 'fstest'}
       ]
     }
   },

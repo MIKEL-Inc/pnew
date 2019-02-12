@@ -4,7 +4,7 @@ module.exports = {
       builderOptions: {
         // options placed here will be merged with default configuration and passed to electron-builder
         "win": {
-          "target": "portable",
+          "target": "nsis-web",
           "icon": "src/assets/logo.png"
         }
       }
@@ -13,10 +13,7 @@ module.exports = {
   css: {
     loaderOptions: {
       sass: {
-        data: `
-        @import "@/sass/globals.sass"
-        @import "~materialize-css/sass/materialize.scss"
-        `
+        data: `@import "@/sass/globals.sass"`
       }
     }
   }
