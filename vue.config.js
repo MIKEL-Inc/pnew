@@ -4,7 +4,7 @@ module.exports = {
       builderOptions: {
         // options placed here will be merged with default configuration and passed to electron-builder
         "win": {
-          "target": "nsis-web",
+          "target": "portable",
           "icon": "src/assets/logo.png"
         }
       }

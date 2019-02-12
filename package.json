@@ -1,6 +1,6 @@
 {
   "name": "pnew",
-  "version": "0.3.2-alpha",
+  "version": "0.3.4-alpha",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",

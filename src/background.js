@@ -1,6 +1,6 @@
 'use strict'
 
-import { app, protocol, BrowserWindow } from 'electron'
+import { app, protocol, BrowserWindow, Menu } from 'electron'
 import {
   createProtocol,
   installVueDevtools
@@ -53,11 +53,14 @@ app.on('activate', () => {
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.on('ready', async () => {
+  const menu = Menu.buildFromTemplate(template)
   if (isDevelopment && !process.env.IS_TEST) {
     // Install Vue Devtools
     await installVueDevtools()
   }
   createWindow()
+  Menu.setApplicationMenu(menu)
+
 })
 
 // Exit cleanly on request from parent process in development mode.
@@ -74,3 +77,30 @@ if (isDevelopment) {
     })
   }
 }
+
+const template = [
+  // { role: 'appMenu' }
+  ...(process.platform === 'darwin' ? [{
+    label: app.getName(),
+    submenu: [
+      { role: 'about' },
+      { type: 'separator' },
+      { role: 'services' },
+      { type: 'separator' },
+      { role: 'hide' },
+      { role: 'hideothers' },
+      { role: 'unhide' },
+      { type: 'separator' },
+      { role: 'quit' }
+    ]
+  }] : []),
+  // { role: 'viewMenu' }
+  {
+    label: 'View',
+    submenu: [
+      { role: 'reload' },
+      { role: 'forcereload' },
+      { role: 'toggledevtools' }
+    ]
+  }
+]
