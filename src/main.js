@@ -7,12 +7,7 @@ import store from './store'
 Vue.config.productionTip = false
 
 new Vue({
-  el: '#app',
   router,
   store,
-  render: h => h(App),
-  mounted() {
-    // Prevent blank screen in Electron builds
-    this.$router.push('/')
-  }
+  render: h => h(App)
 }).$mount('#app')
